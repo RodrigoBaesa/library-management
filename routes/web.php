@@ -1,12 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
+use Laravel\Fortify\Features;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
-    return view('welcome');
-})->name('home');
+    return view('home');
+});
+
+Route::post('/register', [UserController::class, 'register']);
+
+Route::post('/logout', [UserController::class, 'logout']);
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])

@@ -1,5 +1,6 @@
-<x-layouts.app.sidebar :title="$title ?? null">
-    <flux:main>
-        {{ $slot }}
-    </flux:main>
-</x-layouts.app.sidebar>
+<div class="container mt-4"> 
+    <main class="py-4"> <flux:main>
+            {{ $slot }} 
+        </flux:main>
+    </main>
+</div>
